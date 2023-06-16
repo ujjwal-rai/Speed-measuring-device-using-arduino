@@ -17,7 +17,7 @@ long sensor2_time = 0;
 
 long time_diff = 0;
 float velocity = 0;
-//float speed_measured = 0;
+float distance = 15000;  //distance between two sensors in cm * 1000 to convert time from milisecond to second
 
 void setup() {
   lcd.begin(16, 2);
@@ -31,16 +31,16 @@ void setup() {
 }
 
 void loop() {
-  if (analogRead(sensor1_pin) > 700 && sensor1_time == 0)
+  if (analogRead(sensor1_pin) > 700 && sensor1_time == 0)  // sensor values after configuration.
   {
     sensor1_time = millis();
     Serial.println("Object detected at sensor 1");
   }
-  if (analogRead(sensor2_pin) > 850 && sensor1_time > 0)
+  if (analogRead(sensor2_pin) > 850 && sensor1_time > 0)  // sensor values after configuration.
   {
     sensor2_time = millis();
     time_diff = sensor2_time - sensor1_time;
-    velocity = 15000.0 / time_diff;
+    velocity = distance / time_diff;
     Serial.print("Object detected at sensor 2. Time difference: ");
     Serial.print(time_diff);
     Serial.print(" miliseconds. Velocity: ");
