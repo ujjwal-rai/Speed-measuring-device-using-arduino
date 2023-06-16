@@ -10,6 +10,11 @@ Before uploading the final code fisrt you will have to do the configuration of t
 The value of the sensor varies at different places and at different conditions due to the availability of the infrared radiations presnts in the environment.
 
 
+NOTE:-
+
+To measure speed in air we can just use digital value of the sensors.
+
+
 Precaution:
 
 1. Don't perform this experiment in sunlight or in open area in day light because the sensor will detect the infrared present in the sunlight.
